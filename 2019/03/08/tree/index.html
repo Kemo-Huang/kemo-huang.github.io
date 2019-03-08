@@ -4,8 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Bash shell的一些常用技巧, Programmer, Passion, learner, workaholic">
-    <meta name="description" content="Bash shell的一些常用技巧最近在学操作系统，对linux也开始逐渐混熟了。踩坑无数，多少次重装系统，码农不易，我们学生也很艰辛啊。先推荐一下操作系统的圣经《Operating System Concept》这本书，官网给的ppt很不">
+    <meta name="keywords" content="树的基本概念和算法, Programmer, Passion, learner, workaholic">
+    <meta name="description" content="树的基本概念和算法平衡二叉树自平衡二叉搜索树（Self-balancing binary search tree）又被称为AVL树（有别于AVL算法）
+
+它是一棵空树或它的左右两个子树的高度差的绝对值不超过1
+左右两个子树都是一棵平衡二叉树">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Bash shell的一些常用技巧 | Kemo</title>
+    <title>树的基本概念和算法 | Kemo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -279,13 +282,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Bash shell的一些常用技巧
+                        树的基本概念和算法
                     </div>
                 </div>
             </div>
@@ -381,8 +384,8 @@
                                 <span class="chip bg-color">代码</span>
                             </a>
                         
-                            <a href="/tags/技巧/" target="_blank">
-                                <span class="chip bg-color">技巧</span>
+                            <a href="/tags/概念/" target="_blank">
+                                <span class="chip bg-color">概念</span>
                             </a>
                         
                     </div>
@@ -393,8 +396,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/操作系统/" class="post-category" target="_blank">
-                                操作系统
+                            <a href="/categories/数据结构/" class="post-category" target="_blank">
+                                数据结构
                             </a>
                         
                     </div>
@@ -405,7 +408,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-07
+                    2019-03-08
                 </div>
 
                 
@@ -421,83 +424,94 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Bash-shell的一些常用技巧"><a href="#Bash-shell的一些常用技巧" class="headerlink" title="Bash shell的一些常用技巧"></a>Bash shell的一些常用技巧</h1><p>最近在学操作系统，对linux也开始逐渐混熟了。踩坑无数，多少次重装系统，码农不易，我们学生也很艰辛啊。先推荐一下操作系统的圣经《Operating System Concept》这本书，官网给的ppt很不错，讲的很细很精炼 <del>（感觉比自己老师的ppt好得多）</del>。</p>
-<p>第一次作业写的是遍历文件夹及子目录内的所有文件并且将output写入到输出文件内。看似简单，实则不然，需要注意很多特殊问题，这里就总结一下学到的东西吧。</p>
-<h2 id="Array-数组与队列"><a href="#Array-数组与队列" class="headerlink" title="Array 数组与队列"></a><strong>Array 数组与队列</strong></h2><p>我们作业的要求是横向遍历当前文件夹，所以肯定是用到BFS，最方便的方法就是队列queue了。bash没有直接的方法调用队列，但是数组其实就可以实现所有的数据结构，只不过复杂度不同。</p>
-<h3 id="数组创建"><a href="#数组创建" class="headerlink" title="数组创建"></a>数组创建</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># create indexed array</span>
-<span class="token keyword">declare</span> -a array  
-<span class="token comment" spellcheck="true"># or</span>
-array<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># create associative array</span>
-<span class="token keyword">declare</span> -A array_ass
-</code></pre>
-<p>这里关联数组其实就是hash table，可以用字符串作为下标，键值唯一。</p>
-<h3 id="数组赋值"><a href="#数组赋值" class="headerlink" title="数组赋值"></a>数组赋值</h3><pre class=" language-bash"><code class="language-bash">array<span class="token punctuation">[</span>0<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"element"</span>
-array_ass<span class="token punctuation">[</span>keystring<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"value"</span>
-</code></pre>
-<h3 id="数组遍历"><a href="#数组遍历" class="headerlink" title="数组遍历"></a>数组遍历</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># the size of array</span>
-size<span class="token operator">=</span><span class="token variable">${#array[@]}</span>
-<span class="token comment" spellcheck="true"># traverse</span>
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token string">"<span class="token variable">${array[@]}</span>"</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
-    <span class="token keyword">echo</span> element: <span class="token variable">$i</span>
-<span class="token keyword">done</span>
-<span class="token comment" spellcheck="true"># or</span>
-<span class="token keyword">for</span> idx <span class="token keyword">in</span> <span class="token string">"<span class="token variable">${!array[@]}</span>"</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
-    <span class="token keyword">echo</span> element: <span class="token string">"<span class="token variable">${array[i]}</span>"</span>
-<span class="token keyword">done</span>
-</code></pre>
-<h3 id="数组增减"><a href="#数组增减" class="headerlink" title="数组增减"></a>数组增减</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># append</span>
-array+<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
-array_ass+<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">[</span>foo<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"bar"</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># delete</span>
-unset array<span class="token punctuation">[</span>0<span class="token punctuation">]</span>
-unset array_ass<span class="token punctuation">[</span>keystring<span class="token punctuation">]</span>
-<span class="token comment" spellcheck="true"># or</span>
-array<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"<span class="token variable">${array[@]/hello}</span>"</span><span class="token punctuation">)</span>
-array_ass<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"<span class="token variable">${array_ass[@]/bar}</span>"</span><span class="token punctuation">)</span>
-</code></pre>
-<p>使用反斜杠“\”的话算是特殊用法了，如果知道了索引和键值还是用unset吧。  </p>
-<h3 id="字符串数组"><a href="#字符串数组" class="headerlink" title="字符串数组"></a><strong>字符串数组</strong></h3><pre class=" language-bash"><code class="language-bash">string<span class="token operator">=</span><span class="token string">"hello world"</span>
-arr1<span class="token operator">=</span><span class="token punctuation">(</span><span class="token variable">$string</span><span class="token punctuation">)</span>
-arr2<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"<span class="token variable">$string</span>"</span><span class="token punctuation">)</span>
-<span class="token keyword">echo</span> <span class="token variable">${arr1[0]}</span> <span class="token variable">${arr2[0]}</span>
-<span class="token comment" spellcheck="true"># hello hello world</span>
-</code></pre>
-<p>相信只要是写过shell的都明白这个坑了。</p>
-<h3 id="队列实现"><a href="#队列实现" class="headerlink" title="队列实现"></a>队列实现</h3><p>实现queue的话很简单，append已经有了，无非就是pop要写一下。</p>
-<pre class=" language-bash"><code class="language-bash">queue<span class="token operator">=</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span>
-first<span class="token operator">=</span><span class="token variable">${queue[0]}</span>  <span class="token comment" spellcheck="true"># peek</span>
-queue<span class="token operator">=</span><span class="token punctuation">(</span><span class="token variable">${queue[@]:1}</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#pop</span>
-</code></pre>
-<h2 id="Redirection-重定向"><a href="#Redirection-重定向" class="headerlink" title="Redirection 重定向"></a>Redirection 重定向</h2><p>对输入输出进行重定向的话也有一些tricks可以学习。</p>
-<h3 id="根据路径创建文件"><a href="#根据路径创建文件" class="headerlink" title="根据路径创建文件"></a>根据路径创建文件</h3><p>这是作业里的一个大坑之一，需要根据路径将output内容写到输出文件里面。要注意要先创建附目录、参数是否是绝对路径和路径里的空格。</p>
-<pre class=" language-bash"><code class="language-bash">output<span class="token operator">=</span><span class="token string">"<span class="token variable">$1</span>"</span>
-<span class="token comment" spellcheck="true"># get output parent directory path</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$output</span>"</span> <span class="token operator">=</span> <span class="token string">"/*"</span> <span class="token punctuation">]</span>
-<span class="token keyword">then</span>
-    tmp<span class="token operator">=</span><span class="token variable">${output// /\\ }</span>
-<span class="token keyword">else</span>
-    tmp<span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">pwd</span><span class="token variable">`</span></span>/<span class="token variable">${output// /\\ }</span>
-    output<span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">`</span><span class="token function">pwd</span><span class="token variable">`</span></span>/<span class="token variable">$output</span>"</span>  <span class="token comment" spellcheck="true"># ensure it is the absolute path</span>
-<span class="token keyword">fi</span>
-output_dir<span class="token operator">=</span><span class="token string">"`dirname "</span><span class="token variable">$tmp</span><span class="token string">"`"</span>
-<span class="token comment" spellcheck="true"># create parent directories</span>
-<span class="token function">mkdir</span> -p <span class="token string">"<span class="token variable">${output_dir//\\ / }</span>"</span>  
-<span class="token comment" spellcheck="true"># create or clear file</span>
-<span class="token operator">></span> <span class="token string">"<span class="token variable">$output</span>"</span>  <span class="token comment" spellcheck="true"># no input here</span>
-</code></pre>
-<p>这里想说的其实就是初始化文件只需要一个 &gt; 就够了</p>
-<h3 id="使用mapfile和process-substitution存储结果"><a href="#使用mapfile和process-substitution存储结果" class="headerlink" title="使用mapfile和process substitution存储结果"></a>使用mapfile和process substitution存储结果</h3><p>mapfile是bash的内部命令，读取标准输入到索引数组。<br>process substitution 进程替换，返回一个文件描述符号，可以像一个文件名一样被使用。<br>组合使用的话就不需要管道 “|”，而且可以完美的保留多个命令所输出的字符串，不用担心空格影响数组。</p>
-<pre class=" language-bash"><code class="language-bash">mapfile -t output_arr <span class="token operator">&lt;</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span>echo <span class="token string">"hello world"</span><span class="token punctuation">;</span> <span class="token keyword">echo</span> <span class="token string">"[hello world]"</span><span class="token punctuation">)</span>
-</code></pre>
-<p>当然也可以这样直接加引号：</p>
-<pre class=" language-bash"><code class="language-bash">output_arr<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"$(echo "</span>hello world<span class="token string">")"</span> <span class="token string">"$(echo "</span><span class="token punctuation">[</span>hello world<span class="token punctuation">]</span><span class="token string">")"</span><span class="token punctuation">)</span>
-</code></pre>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a><strong>其他</strong></h2><p>这篇文章主要是讲技巧，至于其他的注意事项这里只简要提一下吧。</p>
+                <h1 id="树的基本概念和算法"><a href="#树的基本概念和算法" class="headerlink" title="树的基本概念和算法"></a>树的基本概念和算法</h1><h2 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h2><p>自平衡二叉<strong>搜索</strong>树（Self-balancing binary search tree）又被称为<strong>AVL树</strong>（有别于AVL算法）</p>
 <ul>
-<li>字符串变量一定要加引号</li>
-<li>有些地方一定要空格，比如expr，[ 条件 ]；有些一定不要空格，比如=赋值，&lt;( 命令 )</li>
-<li>方法局部变量记得加个local</li>
+<li>它是一棵空树或它的左右两个子树的高度差的绝对值不超过1</li>
+<li>左右两个子树都是一棵平衡二叉树</li>
+<li>平衡二叉树的常用实现方法有<a href="#红黑树">红黑树</a>、AVL、替罪羊树、Treap、伸展树等</li>
+<li>最小二叉平衡树的节点总数的公式如下 F(n)=F(n-1)+F(n-2)+1（Fibonacci数列），1是根节点，F(n-1)是左子树的节点数量，F(n-2)是右子树的节点数量。</li>
+<li>h = O(logn)</li>
+</ul>
+<h3 id="AVL树旋转"><a href="#AVL树旋转" class="headerlink" title="AVL树旋转"></a>AVL树旋转</h3><pre><code>     y                               x
+    / \     Right Rotation          /  \
+   x   T3   - - - - - - - &gt;        T1   y
+  / \       &lt; - - - - - - -            / \
+ T1  T2     Left Rotation            T2  T3
+
+         z                                      y
+        / \                                   /   \
+       y   T4      Right Rotate (z)          x      z
+      / \          - - - - - - - - -&gt;      /  \    /  \
+     x   T3                               T1  T2  T3  T4
+    / \
+  T1   T2
+
+     z                               z                           x
+    / \                            /   \                        /  \
+   y   T4  Left Rotate (y)        x    T4  Right Rotate(z)    y      z
+  / \      - - - - - - - - -&gt;    /  \      - - - - - - - -&gt;  / \    / \
+T1   x                          y    T3                    T1  T2 T3  T4
+    / \                        / \
+  T2   T3                    T1   T2
+
+  z                                y
+ /  \                            /   \
+T1   y     Left Rotate(z)       z      x
+    /  \   - - - - - - - -&gt;    / \    / \
+   T2   x                     T1  T2 T3  T4
+       / \
+     T3  T4
+
+   z                            z                            x
+  / \                          / \                          /  \
+T1   y   Right Rotate (y)    T1   x      Left Rotate(z)   z      y
+    / \  - - - - - - - - -&gt;     /  \   - - - - - - - -&gt;  / \    / \
+   x   T4                      T2   y                  T1  T2  T3  T4
+  / \                              /  \
+T2   T3                           T3   T4
+</code></pre><h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><p>插在叶节点，根据情况旋转（最多一次）。</p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p>目标节点无子节点，直接删。有一个子节点，删除后子节点顶替。有两个子节点，删除后用右子节点的最左叶节点顶替。最后根据情况旋转（可能两次）。</p>
+<h3 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h3><ul>
+<li>节点是红色或黑色。</li>
+<li>根是黑色。</li>
+<li>所有叶子都是黑色（叶子是NIL节点）。</li>
+<li>每个红色节点必须有<strong>两个</strong>黑色的子节点。</li>
+<li>从任一节点到其每个叶子的所有简单路径都包含<strong>相同数目</strong>的黑色节点。</li>
+</ul>
+<h4 id="优劣"><a href="#优劣" class="headerlink" title="优劣"></a>优劣</h4><p>在插入和删除上比AVL树快，但AVL树更适用于搜索。</p>
+<h4 id="插入-1"><a href="#插入-1" class="headerlink" title="插入"></a>插入</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">insert_case</span><span class="token punctuation">(</span>node <span class="token operator">*</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n<span class="token operator">-></span>parent <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 根节点</span>
+        n<span class="token operator">-></span>color <span class="token operator">=</span> black<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>n<span class="token operator">-></span>parent<span class="token operator">-></span>color <span class="token operator">==</span> BLACK<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 父节点为黑</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">uncle</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> <span class="token function">uncle</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-></span>color <span class="token operator">==</span> RED<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 叔父节点为红</span>
+        n<span class="token operator">-></span>parent<span class="token operator">-></span>color <span class="token operator">=</span> BLACK<span class="token punctuation">;</span>
+        <span class="token function">uncle</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-></span>color <span class="token operator">=</span> BLACK<span class="token punctuation">;</span>
+        <span class="token function">grandparent</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-></span>color <span class="token operator">=</span> RED<span class="token punctuation">;</span>
+        <span class="token function">insert_case</span><span class="token punctuation">(</span><span class="token function">grandparent</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">// 父节点为红或叔父节点为黑</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> n<span class="token operator">-></span>parent<span class="token operator">-></span>right <span class="token operator">&amp;&amp;</span> n<span class="token operator">-></span>parent <span class="token operator">==</span> <span class="token function">grandparent</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-></span>left<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 当前为右节点且父节点为左节点</span>
+            <span class="token function">rotate_left</span><span class="token punctuation">(</span>n<span class="token operator">-></span>parent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            n <span class="token operator">=</span> n<span class="token operator">-></span>left<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> n<span class="token operator">-></span>parent<span class="token operator">-></span>left <span class="token operator">&amp;&amp;</span> n<span class="token operator">-></span>parent <span class="token operator">==</span> <span class="token function">grandparent</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-></span>right<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 当前为左节点且父节点为右节点</span>
+            <span class="token function">rotate_right</span><span class="token punctuation">(</span>n<span class="token operator">-></span>parent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            n <span class="token operator">=</span> n<span class="token operator">-></span>right<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        n<span class="token operator">-></span>parent<span class="token operator">-></span>color <span class="token operator">=</span> BLACK<span class="token punctuation">;</span>
+        <span class="token function">grandparent</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-></span>color <span class="token operator">=</span> RED<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> n<span class="token operator">-></span>parent<span class="token operator">-></span>left <span class="token operator">&amp;&amp;</span> n<span class="token operator">-></span>parent <span class="token operator">==</span> <span class="token function">grandparent</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-></span>left<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 当前节点和父节点都为左节点</span>
+            <span class="token function">rotate_right</span><span class="token punctuation">(</span><span class="token function">grandparent</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">// 当前节点和父节点都为右节点</span>
+            <span class="token function">rotate_left</span><span class="token punctuation">(</span><span class="token function">grandparent</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h4><h2 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h2><h2 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h2><h2 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h2><ul>
+<li>若设二叉树的深度为h，1到h-1层的结点数都是满的，第h层所有的结点都连续集中在最左边。</li>
+<li>度为1的节点数为0或1</li>
+<li>叶子节点数为n/2或(n+1)/2</li>
+<li>转化为森林的个数为h或h-1</li>
 </ul>
 
             </div>
@@ -639,7 +653,7 @@ output_dir<span class="token operator">=</span><span class="token string">"`dirn
                     </span>
                     <a href="http://www.kemo.tech" class="b-link-green">Kemo</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/07/bash-shell/" class="b-link-green">Bash shell的一些常用技巧</a>
+                    <a href="/2019/03/08/tree/" class="b-link-green">树的基本概念和算法</a>
                 </p>
             </div>
         </div>
@@ -661,7 +675,7 @@ output_dir<span class="token operator">=</span><span class="token string">"`dirn
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-03-07T17-16-20',
+        id: '2019-03-08T00-09-46',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -686,20 +700,20 @@ output_dir<span class="token operator">=</span><span class="token string">"`dirn
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/03/08/tree/">
+                <a href="/2019/03/08/algorithms/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="树的基本概念和算法">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="几种常用算法">
                         
-                        <span class="card-title">树的基本概念和算法</span>
+                        <span class="card-title">几种常用算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">树的基本概念和算法平衡二叉树自平衡二叉搜索树（Self-balancing binary search tree）又被称为AVL树（有别于AVL算法）
-
-它是一棵空树或它的左右两个子树的高度差的绝对值不超过1
-左右两个子树都是一棵平衡二叉树</div>
+                    <div class="summary">几种常用算法Binary Serachwhile小于等于先判断左右，否则返回中
+Combinational NumberC(n,m) = C(n-1,m-1) + C(n-1,m)
+#include&lt;iostream>
+#includ</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-08
@@ -708,8 +722,8 @@ output_dir<span class="token operator">=</span><span class="token string">"`dirn
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/数据结构/" class="post-category" target="_blank">
-                                    数据结构
+                            <a href="/categories/算法/" class="post-category" target="_blank">
+                                    算法
                                 </a>
                             
                             
@@ -735,7 +749,7 @@ output_dir<span class="token operator">=</span><span class="token string">"`dirn
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/03/07/bash-shell/">
@@ -765,7 +779,6 @@ output_dir<span class="token operator">=</span><span class="token string">"`dirn
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
