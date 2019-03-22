@@ -4,13 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java代码的一些细节, Programmer, Passion, learner, workaholic">
-    <meta name="description" content="Java代码的一些细节for的执行顺序for (A; B; C) {
-    D;
-}
-// A B D C B D C B... (end with B if there is an end)
+    <meta name="keywords" content="计算机网络基本概念, Programmer, Passion, learner, workaholic">
+    <meta name="description" content="计算机网络基本概念在面试的时候计网的问题实属经典，后台开发必考。本文总结一下常考的基本概念。
+七层协议 (OSI/RM layers)应用层 (Application)设置与另一应用软件之间的通信
 
-异常处理Java 的 Exceptions">
+HTTP, FTP, SMTP, TEL">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java代码的一些细节 | Kemo</title>
+    <title>计算机网络基本概念 | Kemo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -284,13 +282,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java代码的一些细节
+                        计算机网络基本概念
                     </div>
                 </div>
             </div>
@@ -382,8 +380,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/代码/" target="_blank">
-                                <span class="chip bg-color">代码</span>
+                            <a href="/tags/概念/" target="_blank">
+                                <span class="chip bg-color">概念</span>
                             </a>
                         
                     </div>
@@ -394,8 +392,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category" target="_blank">
-                                Java
+                            <a href="/categories/计算机网络/" class="post-category" target="_blank">
+                                计算机网络
                             </a>
                         
                     </div>
@@ -406,7 +404,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-08
+                    2019-03-22
                 </div>
 
                 
@@ -422,13 +420,58 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java代码的一些细节"><a href="#Java代码的一些细节" class="headerlink" title="Java代码的一些细节"></a>Java代码的一些细节</h1><h2 id="for的执行顺序"><a href="#for的执行顺序" class="headerlink" title="for的执行顺序"></a>for的执行顺序</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>A<span class="token punctuation">;</span> B<span class="token punctuation">;</span> C<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    D<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// A B D C B D C B... (end with B if there is an end)</span>
-</code></pre>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>Java 的 Exceptions 和 Errors 等类的继承关系  </p>
-<p><img src="./images/exception.jpg" alt="Exception and Errors"></p>
+                <h1 id="计算机网络基本概念"><a href="#计算机网络基本概念" class="headerlink" title="计算机网络基本概念"></a>计算机网络基本概念</h1><p>在面试的时候计网的问题实属经典，后台开发必考。本文总结一下常考的基本概念。</p>
+<h2 id="七层协议-OSI-RM-layers"><a href="#七层协议-OSI-RM-layers" class="headerlink" title="七层协议 (OSI/RM layers)"></a>七层协议 (OSI/RM layers)</h2><h3 id="应用层-Application"><a href="#应用层-Application" class="headerlink" title="应用层 (Application)"></a>应用层 (Application)</h3><p>设置与另一应用软件之间的通信</p>
+<ul>
+<li>HTTP, FTP, SMTP, TELNET…</li>
+</ul>
+<h3 id="表示层-Presentation"><a href="#表示层-Presentation" class="headerlink" title="表示层 (Presentation)"></a>表示层 (Presentation)</h3><p>把数据转换为能与接收者的系统格式兼容并适合传输的格式。</p>
+<h3 id="会话层-Session"><a href="#会话层-Session" class="headerlink" title="会话层 (Session)"></a>会话层 (Session)</h3><p>负责在数据传输中设置和维护计算机网络中两台计算机之间的通信连接。</p>
+<h3 id="传输层-Transport"><a href="#传输层-Transport" class="headerlink" title="传输层 (Transport)"></a>传输层 (Transport)</h3><h4 id="传输控制协议-TCP"><a href="#传输控制协议-TCP" class="headerlink" title="传输控制协议 (TCP)"></a>传输控制协议 (TCP)</h4><ul>
+<li>面向连接</li>
+<li>可靠</li>
+<li>基于字节流</li>
+</ul>
+<h5 id="拥塞控制-Congestion-control"><a href="#拥塞控制-Congestion-control" class="headerlink" title="拥塞控制 (Congestion control)"></a>拥塞控制 (Congestion control)</h5><h5 id="滑动窗口-Sliding-Window"><a href="#滑动窗口-Sliding-Window" class="headerlink" title="滑动窗口 (Sliding Window)"></a>滑动窗口 (Sliding Window)</h5><ul>
+<li>每字节都有序列号 (sequence number)</li>
+<li>累计确认 (cumulative ACK)</li>
+</ul>
+<h6 id="发送端"><a href="#发送端" class="headerlink" title="发送端"></a>发送端</h6><ul>
+<li>LastByte<strong>Acked</strong> &lt;= LastByte<strong>Sent</strong> &lt;= LastByte<strong>Written</strong></li>
+<li>在LastByte<strong>Acked</strong>和Lastbyte<strong>Written</strong>之间的字节必须被缓冲</li>
+</ul>
+<h6 id="接收端"><a href="#接收端" class="headerlink" title="接收端"></a>接收端</h6><ul>
+<li>LastByte<strong>Read</strong> &lt; NextByte<strong>Expected</strong></li>
+<li>NextByte<strong>Expected</strong> &lt;= LastByte<strong>Rcvd</strong> + 1</li>
+<li>在LastByte<strong>Read</strong>和Lastbyte<strong>Rcvd</strong>之间的字节必须被缓冲</li>
+</ul>
+<h5 id="流控制"><a href="#流控制" class="headerlink" title="流控制"></a>流控制</h5><p>接收端广播窗口 (Advertised Window)</p>
+<h6 id="发送端-1"><a href="#发送端-1" class="headerlink" title="发送端"></a>发送端</h6><ul>
+<li>LastByte<strong>Sent</strong> - LastByte<strong>Acked</strong> &lt;= <strong>Advertised</strong>Window</li>
+<li><strong>Effective</strong>Window = <strong>Advertised</strong>Window - (LastByte<strong>Sent</strong> - LastByte<strong>Acked</strong>)</li>
+<li>LastByte<strong>Written</strong> - LastByte<strong>Acked</strong> &lt;= Max<strong>Send</strong>Buffer</li>
+<li>Block sender if (LastByteWritten - LastByteAcked) + y &gt; MaxSendBuffer</li>
+</ul>
+<h6 id="接收端-1"><a href="#接收端-1" class="headerlink" title="接收端"></a>接收端</h6><ul>
+<li>LastByteRcvd - NextBytteRead &lt;= MaxRcvBuffer</li>
+<li>AdvertisedWindow = MaxRcvBuffer - (LastByteRcvd - NextByteRead)</li>
+</ul>
+<h5 id="适应性重传"><a href="#适应性重传" class="headerlink" title="适应性重传"></a>适应性重传</h5><h4 id="用户数据报协议-UDP"><a href="#用户数据报协议-UDP" class="headerlink" title="用户数据报协议 (UDP)"></a>用户数据报协议 (UDP)</h4><ul>
+<li>面向数据报</li>
+<li>不可靠性。UDP 本身不提供确认、序列号、超时重传等机制，不保留数据备份。UDP 数据报可能在网络中被复制，被重新排序。即 UDP 不保证数据报会到达其最终目的地，也不保证各个数据报的先后顺序，也不保证每个数据报只到达一次</li>
+<li>UDP 数据报是有长度的。每个 UDP 数据报都有长度，如果一个数据报正确地到达目的地，那么该数据报的长度将随数据一起传递给接收方。而 TCP 是一个字节流协议，没有任何（协议上的）记录边界。</li>
+<li>UDP 是无连接的。UDP 客户和服务器之前不必存在长期的关系。UDP 发送数据报之前也不需要经过握手创建连接的过程。</li>
+<li>UDP 支持多播和广播。</li>
+<li>应用: DNS, SNMP, DHCP, RIP</li>
+</ul>
+<h3 id="网络层-Network"><a href="#网络层-Network" class="headerlink" title="网络层 (Network)"></a>网络层 (Network)</h3><ul>
+<li>互联网协议 (IP)</li>
+</ul>
+<h3 id="链路层-Data-Link"><a href="#链路层-Data-Link" class="headerlink" title="链路层 (Data-Link)"></a>链路层 (Data-Link)</h3><ul>
+<li>逻辑链路控制 (logical link control，LLC)</li>
+<li>介质访问控制 (media access control，MAC)</li>
+</ul>
+<h3 id="物理层-Physical"><a href="#物理层-Physical" class="headerlink" title="物理层 (Physical)"></a>物理层 (Physical)</h3><p>局域网上传送数据帧 (data frame)，它负责管理计算机通信设备和网络媒体之间的互通。包括了针脚、电压、线缆规范、集线器、中继器、网卡、主机接口卡等。</p>
 
             </div>
             <hr>
@@ -569,7 +612,7 @@
                     </span>
                     <a href="http://www.kemo.tech" class="b-link-green">Kemo</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/08/java/" class="b-link-green">Java代码的一些细节</a>
+                    <a href="/2019/03/22/network/" class="b-link-green">计算机网络基本概念</a>
                 </p>
             </div>
         </div>
@@ -591,7 +634,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-03-08T18-30-03',
+        id: '2019-03-22T19-17-47',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -614,7 +657,57 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/03/22/network/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="计算机网络基本概念">
+                        
+                        <span class="card-title">计算机网络基本概念</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">计算机网络基本概念在面试的时候计网的问题实属经典，后台开发必考。本文总结一下常考的基本概念。
+七层协议 (OSI/RM layers)应用层 (Application)设置与另一应用软件之间的通信
+
+HTTP, FTP, SMTP, TEL</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/计算机网络/" class="post-category" target="_blank">
+                                    计算机网络
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/概念/" target="_blank">
+                        <span class="chip bg-color">概念</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/03/08/cpp/">
                     <div class="card-image">
@@ -639,9 +732,9 @@ pair
 map
 unordered</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -659,58 +752,6 @@ unordered</div>
                     
                     <a href="/tags/代码/" target="_blank">
                         <span class="chip bg-color">代码</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/03/08/algorithms/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="几种常用算法">
-                        
-                        <span class="card-title">几种常用算法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">几种常用算法Binary Serachwhile小于等于先判断左右，否则返回中
-Combinational NumberC(n,m) = C(n-1,m-1) + C(n-1,m)
-#include&lt;iostream>
-#includ</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-08
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/算法/" class="post-category" target="_blank">
-                                    算法
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/代码/" target="_blank">
-                        <span class="chip bg-color">代码</span>
-                    </a>
-                    
-                    <a href="/tags/概念/" target="_blank">
-                        <span class="chip bg-color">概念</span>
                     </a>
                     
                 </div>
