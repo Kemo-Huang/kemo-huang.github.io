@@ -4,8 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="friends, Programmer, Learner, Workaholic">
-    <meta name="description" content="friends | Kemo">
+    <meta name="keywords" content="软件工程的基本知识, Programmer, Learner, Workaholic">
+    <meta name="description" content="软件工程的基本知识软件工程本身不难，但是在理论上的知识点还是又多又复杂，作为学生，在此整理一下知识点。
+软件配置管理Software Configuration Management (SCM)
+Change control
+Change ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>friends | Kemo</title>
+    <title>软件工程的基本知识 | Kemo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -279,13 +282,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        friends
+                        软件工程的基本知识
                     </div>
                 </div>
             </div>
@@ -375,12 +378,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/代码/" target="_blank">
+                                <span class="chip bg-color">代码</span>
+                            </a>
+                        
+                            <a href="/tags/理论/" target="_blank">
+                                <span class="chip bg-color">理论</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Software/" class="post-category" target="_blank">
+                                Software
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -388,7 +408,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-07
+                    2019-06-05
                 </div>
 
                 
@@ -404,7 +424,92 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="软件工程的基本知识"><a href="#软件工程的基本知识" class="headerlink" title="软件工程的基本知识"></a>软件工程的基本知识</h1><p>软件工程本身不难，但是在理论上的知识点还是又多又复杂，作为学生，在此整理一下知识点。</p>
+<h2 id="软件配置管理"><a href="#软件配置管理" class="headerlink" title="软件配置管理"></a>软件配置管理</h2><p><strong>Software Configuration Management (SCM)</strong></p>
+<h4 id="Change-control"><a href="#Change-control" class="headerlink" title="Change control"></a>Change control</h4><ul>
+<li>Change request<ul>
+<li>new features</li>
+<li>bug report</li>
+</ul>
+</li>
+<li>Change control authority</li>
+<li>link code changes to change requests</li>
+</ul>
+<p><strong>Bugzilla</strong></p>
+<p>A database for bugs. </p>
+<h4 id="Version-control"><a href="#Version-control" class="headerlink" title="Version control"></a>Version control</h4><p>A <strong>Version Control System</strong> (VCS) is a software system that keeps track of the changes made to a set of files so that you can recall a specific version. </p>
+<p>Apache <strong>Subversion</strong> (SVN)</p>
+<ul>
+<li>svn checkout</li>
+<li>git checkout</li>
+<li>svn commit -m “msg”</li>
+<li>git commit -m “msg”</li>
+<li>svn up</li>
+<li>git pull upstream master</li>
+<li>svn add</li>
+<li>git add</li>
+</ul>
+<p><strong>Git</strong></p>
+<p>File status life cycle: untracked, unmodified, modified, staged</p>
+<p><strong>Github</strong></p>
+<p>Pull request: lets you tell others about the changes you’ve pushed to a Github repository.</p>
+<p><strong>Merging</strong> can be bad because sometimes it produces errors.</p>
+<p>Golden rule: Check in quickly. Break work into small steps.</p>
+<h4 id="Build-management"><a href="#Build-management" class="headerlink" title="Build management"></a>Build management</h4><p><strong>Automatic</strong> building</p>
+<p><strong>Test</strong> build procedure</p>
+<p><strong>Tools</strong></p>
+<ul>
+<li>make</li>
+<li>ant</li>
+<li>mvn</li>
+<li>gradle</li>
+</ul>
+<p>Daily build and smoke test</p>
+<h4 id="Releasing"><a href="#Releasing" class="headerlink" title="Releasing"></a>Releasing</h4><p>Maven central and Nexus.</p>
+<p>Alpha/beta release</p>
+<p>Final release</p>
+<p>Bug free.</p>
+<h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><ul>
+<li>Code</li>
+<li>Test suites</li>
+<li>Manuals</li>
+<li>Requirements</li>
+<li>Specifications</li>
+<li>Design Document</li>
+<li>Schedules</li>
+</ul>
+<p><strong>SCM tool</strong> for keeping track of the product.</p>
+<p><strong>Change request:</strong> change control + version control</p>
+<p><strong>Branches</strong></p>
+<ul>
+<li>short-lived</li>
+<li>fixing bugs</li>
+<li>experiment</li>
+<li>political fights</li>
+</ul>
+<p><strong>Discipline</strong></p>
+<p>Software configuration item.</p>
+<ul>
+<li>Identification<ul>
+<li>versions</li>
+<li>baseline</li>
+<li>release</li>
+</ul>
+</li>
+<li>Control</li>
+<li>Status accounting</li>
+<li>Audit and review</li>
+</ul>
+<h2 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h2><h3 id="Smoke-Test"><a href="#Smoke-Test" class="headerlink" title="Smoke Test"></a>Smoke Test</h3><p>Ensure that the system still runs after making a change.</p>
+<h3 id="Unit-Test"><a href="#Unit-Test" class="headerlink" title="Unit Test"></a>Unit Test</h3><p>Ensure that a module is not broken after making a change.</p>
+<h3 id="Regression-Test"><a href="#Regression-Test" class="headerlink" title="Regression Test"></a>Regression Test</h3><p>Ensure that existing code doesn’t get worse as making other improvements.</p>
+<h4 id="Fault-vs-Failure-vs-Errors"><a href="#Fault-vs-Failure-vs-Errors" class="headerlink" title="Fault vs. Failure vs. Errors"></a>Fault vs. Failure vs. Errors</h4><ul>
+<li><p><strong>Fault:</strong> </p>
+</li>
+<li><p><strong>Errors</strong>: </p>
+</li>
+</ul>
+
             </div>
             <hr>
 
@@ -544,7 +649,7 @@
                     </span>
                     <a href="http://www.kemo.tech" class="b-link-green">Kemo</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/friends/index.html" class="b-link-green">friends</a>
+                    <a href="/2019/06/05/softwareengineering/" class="b-link-green">软件工程的基本知识</a>
                 </p>
             </div>
         </div>
@@ -566,7 +671,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-03-07T09-43-56',
+        id: '2019-06-05T16-02-03',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -592,30 +697,49 @@
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/friends/index.html">
+                <a href="/2019/06/05/softwareengineering/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="friends">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="软件工程的基本知识">
                         
-                        <span class="card-title">friends</span>
+                        <span class="card-title">软件工程的基本知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary"></div>
+                    <div class="summary">软件工程的基本知识软件工程本身不难，但是在理论上的知识点还是又多又复杂，作为学生，在此整理一下知识点。
+软件配置管理Software Configuration Management (SCM)
+Change control
+Change </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-07
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-05
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Kemo Huang
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Software/" class="post-category" target="_blank">
+                                    Software
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/代码/" target="_blank">
+                        <span class="chip bg-color">代码</span>
+                    </a>
+                    
+                    <a href="/tags/理论/" target="_blank">
+                        <span class="chip bg-color">理论</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -623,33 +747,47 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/friends/index.html">
+                <a href="/2019/03/22/network/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="friends">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="计算机网络基本概念">
                         
-                        <span class="card-title">friends</span>
+                        <span class="card-title">计算机网络基本概念</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary"></div>
+                    <div class="summary">计算机网络基本概念在面试的时候计网的问题实属经典，后台开发必考。本文总结一下常考的基本概念。
+开放式系统互联七层模型 (OSI/RM layers)应用层 (Application)设置与另一应用软件之间的通信
+
+HTTP, FTP, SM</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-07
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-22
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Kemo Huang
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/计算机网络/" class="post-category" target="_blank">
+                                    计算机网络
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/概念/" target="_blank">
+                        <span class="chip bg-color">概念</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

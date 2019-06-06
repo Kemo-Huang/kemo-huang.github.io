@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>软件工程的基本知识</title>
+      <link href="/2019/06/05/softwareengineering/"/>
+      <url>/2019/06/05/softwareengineering/</url>
+      
+        <content type="html"><![CDATA[<h1 id="软件工程的基本知识"><a href="#软件工程的基本知识" class="headerlink" title="软件工程的基本知识"></a>软件工程的基本知识</h1><p>软件工程本身不难，但是在理论上的知识点还是又多又复杂，作为学生，在此整理一下知识点。</p><h2 id="软件配置管理"><a href="#软件配置管理" class="headerlink" title="软件配置管理"></a>软件配置管理</h2><p><strong>Software Configuration Management (SCM)</strong></p><h4 id="Change-control"><a href="#Change-control" class="headerlink" title="Change control"></a>Change control</h4><ul><li>Change request<ul><li>new features</li><li>bug report</li></ul></li><li>Change control authority</li><li>link code changes to change requests</li></ul><p><strong>Bugzilla</strong></p><p>A database for bugs. </p><h4 id="Version-control"><a href="#Version-control" class="headerlink" title="Version control"></a>Version control</h4><p>A <strong>Version Control System</strong> (VCS) is a software system that keeps track of the changes made to a set of files so that you can recall a specific version. </p><p>Apache <strong>Subversion</strong> (SVN)</p><ul><li>svn checkout</li><li>git checkout</li><li>svn commit -m “msg”</li><li>git commit -m “msg”</li><li>svn up</li><li>git pull upstream master</li><li>svn add</li><li>git add</li></ul><p><strong>Git</strong></p><p>File status life cycle: untracked, unmodified, modified, staged</p><p><strong>Github</strong></p><p>Pull request: lets you tell others about the changes you’ve pushed to a Github repository.</p><p><strong>Merging</strong> can be bad because sometimes it produces errors.</p><p>Golden rule: Check in quickly. Break work into small steps.</p><h4 id="Build-management"><a href="#Build-management" class="headerlink" title="Build management"></a>Build management</h4><p><strong>Automatic</strong> building</p><p><strong>Test</strong> build procedure</p><p><strong>Tools</strong></p><ul><li>make</li><li>ant</li><li>mvn</li><li>gradle</li></ul><p>Daily build and smoke test</p><h4 id="Releasing"><a href="#Releasing" class="headerlink" title="Releasing"></a>Releasing</h4><p>Maven central and Nexus.</p><p>Alpha/beta release</p><p>Final release</p><p>Bug free.</p><h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><ul><li>Code</li><li>Test suites</li><li>Manuals</li><li>Requirements</li><li>Specifications</li><li>Design Document</li><li>Schedules</li></ul><p><strong>SCM tool</strong> for keeping track of the product.</p><p><strong>Change request:</strong> change control + version control</p><p><strong>Branches</strong></p><ul><li>short-lived</li><li>fixing bugs</li><li>experiment</li><li>political fights</li></ul><p><strong>Discipline</strong></p><p>Software configuration item.</p><ul><li>Identification<ul><li>versions</li><li>baseline</li><li>release</li></ul></li><li>Control</li><li>Status accounting</li><li>Audit and review</li></ul><h2 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h2><h3 id="Smoke-Test"><a href="#Smoke-Test" class="headerlink" title="Smoke Test"></a>Smoke Test</h3><p>Ensure that the system still runs after making a change.</p><h3 id="Unit-Test"><a href="#Unit-Test" class="headerlink" title="Unit Test"></a>Unit Test</h3><p>Ensure that a module is not broken after making a change.</p><h3 id="Regression-Test"><a href="#Regression-Test" class="headerlink" title="Regression Test"></a>Regression Test</h3><p>Ensure that existing code doesn’t get worse as making other improvements.</p><h4 id="Fault-vs-Failure-vs-Errors"><a href="#Fault-vs-Failure-vs-Errors" class="headerlink" title="Fault vs. Failure vs. Errors"></a>Fault vs. Failure vs. Errors</h4><ul><li><p><strong>Fault:</strong> </p></li><li><p><strong>Errors</strong>: </p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Software </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 代码 </tag>
+            
+            <tag> 理论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机网络基本概念</title>
       <link href="/2019/03/22/network/"/>
       <url>/2019/03/22/network/</url>
@@ -58,7 +85,7 @@
       <link href="/2019/03/08/java/"/>
       <url>/2019/03/08/java/</url>
       
-        <content type="html"><![CDATA[<h1 id="Java代码的一些细节"><a href="#Java代码的一些细节" class="headerlink" title="Java代码的一些细节"></a>Java代码的一些细节</h1><h2 id="for的执行顺序"><a href="#for的执行顺序" class="headerlink" title="for的执行顺序"></a>for的执行顺序</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>A<span class="token punctuation">;</span> B<span class="token punctuation">;</span> C<span class="token punctuation">)</span> <span class="token punctuation">{</span>    D<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">// A B D C B D C B... (end with B if there is an end)</span></code></pre><h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>Java 的 Exceptions 和 Errors 等类的继承关系  </p><p><img src="./images/exception.jpg" alt="Exception and Errors"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Java代码的一些细节"><a href="#Java代码的一些细节" class="headerlink" title="Java代码的一些细节"></a>Java代码的一些细节</h1><h2 id="for的执行顺序"><a href="#for的执行顺序" class="headerlink" title="for的执行顺序"></a>for的执行顺序</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span>A<span class="token punctuation">;</span> B<span class="token punctuation">;</span> C<span class="token punctuation">)</span> <span class="token punctuation">{</span>    D<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">// A B D C B D C B... (end with B if there is an end)</span></code></pre><h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>Java 的 Exceptions 和 Errors 等类的继承关系  </p><p><img src="./images/exception.jpg" alt="Exception and Errors"></p><h2 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h2><p>Java 不支持对类的多继承 （编译错误），可以对接口多继承。Java 8 接口可以有默认方法 <code>default void func() {...}</code>。 当多个父接口中的默认方法名相同时，同时继承他们必须重写。</p>]]></content>
       
       
       <categories>
