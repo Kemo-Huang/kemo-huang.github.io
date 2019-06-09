@@ -587,6 +587,14 @@ Change ">
 </ul>
 </li>
 </ul>
+<p><strong>Practices</strong></p>
+<ul>
+<li><strong>Planning game</strong> for requirements</li>
+<li><strong>Test driven development</strong> for design and testing</li>
+<li><strong>Refactoring</strong> for design</li>
+<li><strong>Pair programming</strong> for development</li>
+<li><strong>Continuous integration</strong> for integration</li>
+</ul>
 <h2 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h2><h3 id="Smoke-Test"><a href="#Smoke-Test" class="headerlink" title="Smoke Test"></a>Smoke Test</h3><p>Ensure that the system still runs after making a change.</p>
 <p>A quick set of tests run on the daily build.</p>
 <ul>
@@ -595,7 +603,7 @@ Change ">
 </ul>
 <h3 id="Unit-Test"><a href="#Unit-Test" class="headerlink" title="Unit Test"></a>Unit Test</h3><p>Ensure that a module is not broken after making a change.</p>
 <h3 id="Regression-Test"><a href="#Regression-Test" class="headerlink" title="Regression Test"></a>Regression Test</h3><p>Ensure that existing code doesn’t get worse as making other improvements.</p>
-<h4 id="Fault-vs-Failure-vs-Errors"><a href="#Fault-vs-Failure-vs-Errors" class="headerlink" title="Fault vs. Failure vs. Errors"></a>Fault vs. Failure vs. Errors</h4><ul>
+<h3 id="Fault-vs-Failure-vs-Errors"><a href="#Fault-vs-Failure-vs-Errors" class="headerlink" title="Fault vs. Failure vs. Errors"></a>Fault vs. Failure vs. Errors</h3><ul>
 <li><strong>Fault:</strong> bug in the program</li>
 <li><strong>Error</strong>: difference between computed value and true value.<ul>
 <li>Discrepancy between a computed, observed or measured value or condition and the true, specified, or theoretically correct value or condition.</li>
@@ -610,14 +618,230 @@ Change ">
 <span class="token keyword">import</span> <span class="token keyword">static</span> org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>Assert<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> MyClass myClass<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Before</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">beforeEachTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        myClass <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@After</span> <span class="token keyword">void</span> <span class="token function">afterEachTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        myClass <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token annotation punctuation">@Test</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        myClass <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        actual <span class="token operator">=</span> myClass<span class="token punctuation">.</span><span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">assertEquals</span><span class="token punctuation">(</span>expected<span class="token punctuation">,</span> actual<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="Test-Driven-Development-TDD"><a href="#Test-Driven-Development-TDD" class="headerlink" title="Test Driven Development (TDD)"></a>Test Driven Development (TDD)</h3><p><img src="D:\Resources\blog\source\_posts\images\tdd.png" alt></p>
+<h3 id="Test-Driven-Development-TDD"><a href="#Test-Driven-Development-TDD" class="headerlink" title="Test Driven Development (TDD)"></a>Test Driven Development (TDD)</h3><p><img src="images\tdd.png" alt></p>
+<h3 id="Code-Coverage"><a href="#Code-Coverage" class="headerlink" title="Code Coverage"></a>Code Coverage</h3><ul>
+<li>A form of <strong>dynamic analysis</strong></li>
+<li><strong>White box</strong> testing</li>
+</ul>
+<p><strong>Criteria:</strong> To measure what percentage of code has been exercised by a test suite.</p>
+<ul>
+<li>Class coverage</li>
+<li>Method coverage</li>
+<li>Branch coverage</li>
+<li>Statement coverage</li>
+<li>Instruction coverage</li>
+</ul>
+<p>Coverage tool:</p>
+<ul>
+<li>JaCoCo (Java Code Coverage)</li>
+</ul>
+<p>Code Coverage <strong>cannot ensure test quality</strong>.</p>
+<h3 id="Mutation-Testing"><a href="#Mutation-Testing" class="headerlink" title="Mutation Testing"></a>Mutation Testing</h3><p>tool: PIT</p>
+<h3 id="JUnit-Generation-Tool"><a href="#JUnit-Generation-Tool" class="headerlink" title="JUnit Generation Tool"></a>JUnit Generation Tool</h3><ul>
+<li>Randoop</li>
+<li>Evosuite</li>
+</ul>
+<h2 id="衡量标准"><a href="#衡量标准" class="headerlink" title="衡量标准"></a>衡量标准</h2><p>Technical Metrics:</p>
+<ul>
+<li><p>Code Size</p>
+<ul>
+<li>lines of code (assambly &gt; c &gt; java &gt; python)</li>
+<li>number of classes, functions, files, etc.</li>
+<li>function points</li>
+</ul>
+</li>
+<li><p>Code Complexity</p>
+<ul>
+<li><strong>dependencies / coupling / cohesion</strong></li>
+<li>depth of nesting</li>
+<li><strong>cyclomatic complexity = number of branches ( if , while , for ) + 1</strong></li>
+<li>function points</li>
+</ul>
+</li>
+</ul>
+<p><strong>Coupling</strong></p>
+<ul>
+<li><p>Dhama’s metric: </p>
+<ul>
+<li>number of input / output parameters</li>
+</ul>
+<ul>
+<li>number of global variables used</li>
+<li>number of modules called / calling</li>
+</ul>
+</li>
+<li><p>Martin’s metric:</p>
+<ul>
+<li>Ca: Afferent coupling: the number of classes <strong>outside</strong> this module that <strong>depend on</strong> classes <strong>inside</strong> this module</li>
+<li>Ce: Efferent coupling: the number of classes <strong>inside</strong> this module that <strong>depend on</strong> classes <strong>outside</strong> this module</li>
+<li>Instability: I = Ce / (Ca + Ce)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Abstractness</strong> = (number of abstract classes in module / number of classes in module)</p>
+<h2 id="逆向工程"><a href="#逆向工程" class="headerlink" title="逆向工程"></a>逆向工程</h2><p>Reverse Engineering Patterns (Read all code in 1 hour):</p>
+<ul>
+<li>Intent: <strong>Assess</strong> a software system via a brief but intensive <strong>code review</strong></li>
+<li>Problem: System is large and varied, unfamiliar</li>
+<li>Solution: Read code and document findings (important entities and tests, “code smell”)</li>
+<li>Looks for:<ul>
+<li><strong>Coding style, tests</strong></li>
+<li><strong>Abstract classes or classes hign in hierachy</strong></li>
+<li><strong>Large entities, comments</strong></li>
+</ul>
+</li>
+</ul>
+<p>Activities:</p>
+<ul>
+<li><strong>Read documentation</strong><ul>
+<li>requirements</li>
+<li>architecture overview</li>
+<li>design of components</li>
+<li>interface descriptions</li>
+<li>user manuals</li>
+<li>code comments</li>
+</ul>
+</li>
+<li><strong>Talk to people</strong></li>
+<li><strong>Read code</strong></li>
+<li><strong>Work with the system</strong></li>
+<li><strong>Write documentation</strong></li>
+</ul>
+<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><p>Dynamic analysis:</p>
+<ul>
+<li>Testing</li>
+<li>Code coverage</li>
+</ul>
+<p>Static analysis:</p>
+<ul>
+<li>Checkstyle<ul>
+<li>whitespace and indentation</li>
+<li>variable names</li>
+<li>Javadoc commenting</li>
+<li>code complexity</li>
+<li>proper usage</li>
+</ul>
+</li>
+<li>PMD<ul>
+<li>Possible bugs</li>
+<li>Dead code</li>
+<li>Suboptimal code</li>
+<li>Overcomplicated expressions</li>
+<li>Duplicate code</li>
+</ul>
+</li>
+<li>FindBugs<ul>
+<li>Correctness</li>
+<li>Bad practice</li>
+<li>Performance</li>
+<li>Multithreaded correctness</li>
+<li>Dodgy</li>
+</ul>
+</li>
+</ul>
+<p>Making sure that no warning produced by Static Analysis is a form of defensive programming</p>
+<h2 id="防御性编程"><a href="#防御性编程" class="headerlink" title="防御性编程"></a>防御性编程</h2><p><strong>Defensive programming</strong> is a form of <a href="https://en.wikipedia.org/wiki/Defensive_design" target="_blank" rel="noopener">defensive design</a> intended to ensure the continuing function of a piece of <a href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a> under unforeseen circumstances. Defensive programming practices are often used where high availability, safety or security is needed.</p>
+<h2 id="用户交互设计"><a href="#用户交互设计" class="headerlink" title="用户交互设计"></a>用户交互设计</h2><ul>
+<li>Make Everything the User Needs Readily Accessible</li>
+<li>Be Consistent</li>
+<li>Be Clear</li>
+<li>Give Feedback</li>
+<li>Use Recognition, Not Recall</li>
+<li>Choose What People Will Interact First</li>
+<li>Follow Design Standards</li>
+<li>Elemental Hierarchy Matters</li>
+<li>Keep Things Simple</li>
+<li>Keep Your Users Free &amp; In Control</li>
+</ul>
+<p>Mobile UI design challenges:</p>
+<ul>
+<li>Small screens</li>
+<li>Fat fingers</li>
+<li>Poor text entry</li>
+</ul>
+<p>Simplify:</p>
+<ul>
+<li>Follow design patterns</li>
+<li>Use touch gestures where possible</li>
+</ul>
+<h2 id="文档注释"><a href="#文档注释" class="headerlink" title="文档注释"></a>文档注释</h2><p><strong>Javadoc</strong></p>
+<ul>
+<li><p><strong>class and interface</strong></p>
+<ul>
+<li>@author</li>
+<li>@version</li>
+</ul>
+</li>
+<li><p><strong>method</strong></p>
+<ul>
+<li>@param</li>
+<li>@return</li>
+<li>@exception</li>
+</ul>
+</li>
+<li><p>The first sentence should summarize the purpose of the element</p>
+</li>
+<li>For methods, omit the subject and write in the third person narrative form</li>
+<li>Use the word “<strong>this</strong>“ rather than “the” when referring to instances of the current class</li>
+<li>Do not add parentheses to a method or constructor name unless you want to specify a particular signature</li>
+<li>Keep comments up to date</li>
+</ul>
+<p>Bugs and missing features</p>
+<ul>
+<li>TODO: describes a feature that should be added</li>
+<li>FIXME: describes a bug in the method</li>
+<li>XXX: this needs to be thought about some more</li>
+</ul>
+<p>Inconsistency</p>
+<ul>
+<li>correct code, incorrect comment</li>
+<li>fault in code, correct comment</li>
+</ul>
+<h2 id="开发运营和持续集成"><a href="#开发运营和持续集成" class="headerlink" title="开发运营和持续集成"></a>开发运营和持续集成</h2><p><strong>DevOps</strong> = Development + Optimization</p>
+<p><strong>Continuous Integration</strong> is a software development practice where members of a team integrate their work frequently</p>
+<ul>
+<li>Maintain a code repository version control</li>
+<li>Automate the build</li>
+<li>Make your build self testing</li>
+<li>Everyone commits to mainline every day</li>
+<li>Every commit should build mainline on an integration machine</li>
+<li>Keep the build fast</li>
+<li>Test in a clone of the production environment</li>
+<li>Make it easy for anyone to get the latest executable</li>
+<li>Everyone can see what’s happening</li>
+<li>Automate deployment</li>
+</ul>
+<h2 id="软件安全"><a href="#软件安全" class="headerlink" title="软件安全"></a>软件安全</h2><p>Techniques:</p>
+<ul>
+<li>Barriers</li>
+<li>Authentication and Authorization</li>
+<li>Encryption</li>
+</ul>
+<p>Security for a Mentcare system</p>
+<ul>
+<li><strong>Asset:</strong> The records of each patient that is receiving or has receviced treatment.</li>
+<li><p><strong>Exposure</strong>: Potential financial loss from future patient who do not seek treatment because not trusting the clinic to maintain data.</p>
+</li>
+<li><p><strong>Vulnerability</strong>: Week </p>
+</li>
+<li><strong>Attack</strong>: </li>
+<li><strong>Threat</strong></li>
+<li><strong>Control</strong>: </li>
+</ul>
 
             </div>
             <hr>
