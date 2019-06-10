@@ -595,21 +595,46 @@ Change ">
 <li><strong>Pair programming</strong> for development</li>
 <li><strong>Continuous integration</strong> for integration</li>
 </ul>
-<h2 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h2><h3 id="Smoke-Test"><a href="#Smoke-Test" class="headerlink" title="Smoke Test"></a>Smoke Test</h3><p>Ensure that the system still runs after making a change.</p>
+<h2 id="软件测试"><a href="#软件测试" class="headerlink" title="软件测试"></a>软件测试</h2><p><strong>Smoke Test</strong></p>
+<p>Ensure that the system still runs after making a change.</p>
 <p>A quick set of tests run on the daily build.</p>
 <ul>
 <li>cover most important functionalities of the software.</li>
+<li>check whether code catches file or smoke.</li>
 <li>expose integration problems earlier.</li>
 </ul>
-<h3 id="Unit-Test"><a href="#Unit-Test" class="headerlink" title="Unit Test"></a>Unit Test</h3><p>Ensure that a module is not broken after making a change.</p>
-<h3 id="Regression-Test"><a href="#Regression-Test" class="headerlink" title="Regression Test"></a>Regression Test</h3><p>Ensure that existing code doesn’t get worse as making other improvements.</p>
-<h3 id="Fault-vs-Failure-vs-Errors"><a href="#Fault-vs-Failure-vs-Errors" class="headerlink" title="Fault vs. Failure vs. Errors"></a>Fault vs. Failure vs. Errors</h3><ul>
-<li><strong>Fault:</strong> bug in the program</li>
-<li><strong>Error</strong>: difference between computed value and true value.<ul>
+<p><strong>Unit Test</strong></p>
+<p>Ensure that a module is not broken after making a change.</p>
+<p><strong>Integration Test</strong></p>
+<p>Verify software quality by testing two or more dependent software modules as a group.</p>
+<ul>
+<li><p><strong>Big-bang Integration Testing</strong>: All component are integrated together at once</p>
+<ul>
+<li>Convenient for small systems.</li>
+<li>Finding bugs is difficult.</li>
+<li>Due to large number of interfaces that need to be tested, some interfaces could be missed easily.</li>
+</ul>
+</li>
+<li><p><strong>Incremental Integration Testing</strong>: Develop a functional “skeleton” system. Design, code, test, debug a small new piece. Integrate this piece with the skeleton.</p>
+<ul>
+<li>Errors easier to isolate, find, fix</li>
+<li>System is always in a (relatively) working state</li>
+<li>May need to create “stub” versions of some features that have not yet been integrated</li>
+</ul>
+</li>
+</ul>
+<p><strong>System Test</strong></p>
+<p><strong>Acceptance Test</strong></p>
+<p><strong>Regression Test</strong></p>
+<p>Ensure that existing code doesn’t get worse as making other improvements. It means <strong>re-running</strong> test cases from <strong>existing test suites</strong> to ensure that software changes do not introduce new faults.</p>
+<p><strong>Fault vs. Failure vs. Errors</strong></p>
+<ul>
+<li><strong>Fault:</strong> bug in the program (故障)</li>
+<li><strong>Error</strong>: difference between computed value and true value. (错误)<ul>
 <li>Discrepancy between a computed, observed or measured value or condition and the true, specified, or theoretically correct value or condition.</li>
 </ul>
 </li>
-<li><strong>failure</strong>: program behaves unexpectedly.<ul>
+<li><strong>failure</strong>: program behaves unexpectedly. (失效)<ul>
 <li>Termination of the ability of an element or an item to perform a function as required.</li>
 </ul>
 </li>
@@ -632,8 +657,10 @@ Change ">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="Test-Driven-Development-TDD"><a href="#Test-Driven-Development-TDD" class="headerlink" title="Test Driven Development (TDD)"></a>Test Driven Development (TDD)</h3><p><img src="images\tdd.png" alt></p>
-<h3 id="Code-Coverage"><a href="#Code-Coverage" class="headerlink" title="Code Coverage"></a>Code Coverage</h3><ul>
+<p><strong>Test Driven Development (TDD)</strong></p>
+<p><img src="images\tdd.png" alt></p>
+<p><strong>Code Coverage</strong></p>
+<ul>
 <li>A form of <strong>dynamic analysis</strong></li>
 <li><strong>White box</strong> testing</li>
 </ul>
@@ -650,12 +677,25 @@ Change ">
 <li>JaCoCo (Java Code Coverage)</li>
 </ul>
 <p>Code Coverage <strong>cannot ensure test quality</strong>.</p>
-<h3 id="Mutation-Testing"><a href="#Mutation-Testing" class="headerlink" title="Mutation Testing"></a>Mutation Testing</h3><p>tool: PIT</p>
-<h3 id="JUnit-Generation-Tool"><a href="#JUnit-Generation-Tool" class="headerlink" title="JUnit Generation Tool"></a>JUnit Generation Tool</h3><ul>
+<p><strong>Mutation Testing</strong></p>
+<p>tool: PIT</p>
+<p><strong>JUnit Generation Tool</strong></p>
+<ul>
 <li>Randoop</li>
 <li>Evosuite</li>
 </ul>
-<h2 id="衡量标准"><a href="#衡量标准" class="headerlink" title="衡量标准"></a>衡量标准</h2><p>Technical Metrics:</p>
+<p><strong>Android</strong></p>
+<ul>
+<li>local unit test</li>
+<li><strong>instrumented test</strong></li>
+</ul>
+<p><strong>Flaky Tests</strong>: Test which could fail or pass for the same code</p>
+<ul>
+<li>concurrency</li>
+<li>environment setup</li>
+<li>non-deterministic or undefined behaviours</li>
+</ul>
+<h2 id="衡量标准"><a href="#衡量标准" class="headerlink" title="衡量标准"></a>衡量标准</h2><p><strong>Technical Metrics:</strong></p>
 <ul>
 <li><p>Code Size</p>
 <ul>
@@ -705,6 +745,15 @@ Change ">
 </ul>
 </li>
 </ul>
+<p>Top-down </p>
+<ul>
+<li><strong>recover design:</strong> speculate about design</li>
+</ul>
+<p>Bottom-up</p>
+<ul>
+<li><strong>recover database</strong>: analyze the persistent data</li>
+<li><strong>identify problems</strong>: study the exceptional entities</li>
+</ul>
 <p>Activities:</p>
 <ul>
 <li><strong>Read documentation</strong><ul>
@@ -721,13 +770,16 @@ Change ">
 <li><strong>Work with the system</strong></li>
 <li><strong>Write documentation</strong></li>
 </ul>
-<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><p>Dynamic analysis:</p>
+<p>Tools</p>
 <ul>
+<li>apktool.jar</li>
+<li>jadx</li>
+</ul>
+<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><h3 id="Dynamic-analysis"><a href="#Dynamic-analysis" class="headerlink" title="Dynamic analysis:"></a>Dynamic analysis:</h3><ul>
 <li>Testing</li>
 <li>Code coverage</li>
 </ul>
-<p>Static analysis:</p>
-<ul>
+<h3 id="Static-analysis"><a href="#Static-analysis" class="headerlink" title="Static analysis:"></a>Static analysis:</h3><ul>
 <li>Checkstyle<ul>
 <li>whitespace and indentation</li>
 <li>variable names</li>
@@ -780,21 +832,22 @@ Change ">
 </ul>
 <h2 id="文档注释"><a href="#文档注释" class="headerlink" title="文档注释"></a>文档注释</h2><p><strong>Javadoc</strong></p>
 <ul>
-<li><p><strong>class and interface</strong></p>
-<ul>
+<li><strong>class and interface</strong><ul>
 <li>@author</li>
 <li>@version</li>
 </ul>
 </li>
-<li><p><strong>method</strong></p>
-<ul>
+<li><strong>method</strong><ul>
 <li>@param</li>
 <li>@return</li>
 <li>@exception</li>
 </ul>
 </li>
-<li><p>The first sentence should summarize the purpose of the element</p>
+<li><strong>instance or static variable</strong><ul>
+<li>no tag</li>
+</ul>
 </li>
+<li>The first sentence should summarize the purpose of the element</li>
 <li>For methods, omit the subject and write in the third person narrative form</li>
 <li>Use the word “<strong>this</strong>“ rather than “the” when referring to instances of the current class</li>
 <li>Do not add parentheses to a method or constructor name unless you want to specify a particular signature</li>
@@ -812,6 +865,7 @@ Change ">
 <li>fault in code, correct comment</li>
 </ul>
 <h2 id="开发运营和持续集成"><a href="#开发运营和持续集成" class="headerlink" title="开发运营和持续集成"></a>开发运营和持续集成</h2><p><strong>DevOps</strong> = Development + Optimization</p>
+<p><img src="images\continuous.png" alt></p>
 <p><strong>Continuous Integration</strong> is a software development practice where members of a team integrate their work frequently</p>
 <ul>
 <li>Maintain a code repository version control</li>
@@ -825,22 +879,87 @@ Change ">
 <li>Everyone can see what’s happening</li>
 <li>Automate deployment</li>
 </ul>
-<h2 id="软件安全"><a href="#软件安全" class="headerlink" title="软件安全"></a>软件安全</h2><p>Techniques:</p>
+<p><strong>Top-down Integration</strong>: Start with outer UI layers and work inward</p>
+<p><strong>Bottom-up Integration</strong>: Start with low level data/logic layers and work outward</p>
+<p><strong>“Sandwich” Integration</strong>: Connect top level UI with crucial bottom level classes</p>
+<p><strong>CI server</strong>: An external machine that automatically pulls your latest repo code and fully <strong>builds</strong> all resources.</p>
+<ul>
+<li>Travis CI</li>
+</ul>
+<p><strong>Continuous Delivery</strong>: continuously running a deployment pipeline that <strong>tests</strong> if this software is in a state to be delivered.</p>
+<ul>
+<li>Continuous Delivery = Continuous Integration + <strong>automated test suite</strong></li>
+</ul>
+<p><strong>Continuous Deployment</strong>: Every change that passes the automated tests is deployed to production automatically.</p>
+<ul>
+<li><p>Continuous Deployment = Continuous Delivery + <strong>automatic deployment</strong></p>
+</li>
+<li><p>zero-downtime deployment</p>
+<ol>
+<li>Deploy version 1 of your service</li>
+<li>Migrate your database to a new version</li>
+<li>Deploy version 2 of your service <strong>in parallel</strong> to the version 1</li>
+<li>If version 2 works fine, bring down version 1</li>
+</ol>
+</li>
+<li><p>blue-green deployment</p>
+<ol>
+<li><p>Maintain two copies of your production environment (“blue” and “green”)</p>
+</li>
+<li><p>Route all traffic to the blue environment by mapping production URLs to it</p>
+</li>
+<li>Deploy and test any changes to the application in the green environment</li>
+<li>“<strong>Flip the switch</strong>“: Map URLs onto green &amp; unmap them from blue.</li>
+</ol>
+</li>
+</ul>
+<h2 id="安全工程"><a href="#安全工程" class="headerlink" title="安全工程"></a>安全工程</h2><ul>
+<li><p>Confidentiality</p>
+</li>
+<li><p>Integrity</p>
+</li>
+<li><p>Availabilitiy</p>
+</li>
+</ul>
+<p>Techniques:</p>
 <ul>
 <li>Barriers</li>
 <li>Authentication and Authorization</li>
 <li>Encryption</li>
 </ul>
-<p>Security for a Mentcare system</p>
+<p>Security terminology</p>
 <ul>
-<li><strong>Asset:</strong> The records of each patient that is receiving or has receviced treatment.</li>
-<li><p><strong>Exposure</strong>: Potential financial loss from future patient who do not seek treatment because not trusting the clinic to maintain data.</p>
+<li><strong>Asset:</strong> Something of value which has to be protected. The asset may be the software system itself or data used by that system.</li>
+<li><strong>Attack</strong>: An exploitation of a system’s vulnerability. Generally, this is from outside the system and is a deliberate attempt to cause some damage.</li>
+<li><strong>Control</strong>: A protective measure that reduces a system’s vulnerability. Encryption is an example of a control that reduces a vulnerability of a weak access control system</li>
+<li><strong>Exposure</strong>: Possible loss or harm to a computing system. This can be loss or damage to data, or can be a loss of time and effort if recovery is necessary after a security breach.</li>
+<li><p><strong>Threat</strong>: Circumstances that have potential to cause loss or harm. You can think of these as a system vulnerability that is subjected to an attack.</p>
 </li>
-<li><p><strong>Vulnerability</strong>: Week </p>
+<li><p><strong>Vulnerability</strong>: A weakness in a computer based system that may be exploited to cause loss or harm.</p>
 </li>
-<li><strong>Attack</strong>: </li>
-<li><strong>Threat</strong></li>
-<li><strong>Control</strong>: </li>
+</ul>
+<p>Security risks in moblie application development</p>
+<ul>
+<li><strong>weak server side controls</strong><ul>
+<li>encrypt the sensitive data</li>
+</ul>
+</li>
+<li><strong>insufficient transport layer protection</strong><ul>
+<li>transfer encrypted data</li>
+</ul>
+</li>
+<li><strong>poor authentication and authorization</strong><ul>
+<li>manage security logic in API</li>
+</ul>
+</li>
+<li><strong>improper session handling</strong><ul>
+<li>set timeout for session</li>
+</ul>
+</li>
+<li><strong>sensitive information disclosure</strong><ul>
+<li>expose only required information to API</li>
+</ul>
+</li>
 </ul>
 
             </div>
